@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2 Potatoes — Studio digitale di Elio &amp; Gaia</title>
-<meta name="description" content="2 Potatoes — due patate, tante idee. Lo studio digitale di Elio &amp; Gaia: app, bot, automazioni e progetti fatti in casa con cura.">
+<title>2 Potatoes — Elio &amp; Gaia, duo tecnico + creativo</title>
+<meta name="description" content="2 Potatoes — Elio &amp; Gaia, un duo tecnico + creativo: app mobile, siti web, social media e contenuti, cybersecurity, automazioni e piattaforme. Lui costruisce, lei dà voce.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥔</text></svg>">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="2 Potatoes — Studio digitale">
-<meta property="og:description" content="Due patate, tante idee. App, bot e automazioni fatte in casa con cura.">
+<meta property="og:title" content="2 Potatoes — Elio &amp; Gaia, duo tecnico + creativo">
+<meta property="og:description" content="Due patate, tante idee. Lui costruisce app, siti, automazioni e piattaforme; lei dà voce ai brand con strategia, contenuti e community.">
 <meta property="og:url" content="https://2-potatoes.com/">
 
 <link rel="alternate" hreflang="it" href="https://2-potatoes.com/">
@@ -31,6 +31,8 @@
   --coral:#E9634B;
   --leaf:#6FA76F;
   --sky:#5BA8C4;
+  --koe:#F6A5BC;
+  --koe-deep:#D41367;
   --radius:26px;
   --maxw:1060px;
   --shadow:0 14px 34px rgba(61,44,30,.12);
@@ -75,7 +77,8 @@ header.nav.scrolled{box-shadow:0 2px 18px rgba(61,44,30,.08)}
 .hero h1{font-size:clamp(2.6rem,7vw,4.4rem);line-height:1.05;font-weight:700;letter-spacing:-.02em}
 .hero h1 .hl{color:var(--coral)}
 .hero .tag{font-size:clamp(1.05rem,2.6vw,1.35rem);color:var(--muted);font-weight:700;margin:18px auto 14px}
-.hero p.lead{max-width:560px;margin:0 auto 36px;color:var(--muted);font-size:1.05rem}
+.hero p.lead{max-width:600px;margin:0 auto 36px;color:var(--muted);font-size:1.05rem}
+.hero p.lead b{color:var(--ink)}
 .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn{padding:14px 28px;border-radius:999px;font-weight:800;font-size:1rem;display:inline-flex;align-items:center;gap:8px;transition:transform .18s,box-shadow .18s}
 .btn:hover{transform:translateY(-3px) rotate(-1deg)}
@@ -91,28 +94,62 @@ section{padding:88px 0}
 
 /* DUO */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.person{background:var(--card);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow);text-align:center;transition:transform .2s}
+.person{background:var(--card);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow);text-align:center;transition:transform .2s;display:flex;flex-direction:column;align-items:center}
 .person:hover{transform:translateY(-6px) rotate(-.5deg)}
+.person .face,.person .avatar{height:96px;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
 .person .face{font-size:3rem}
+.person .avatar{width:88px;height:88px;border-radius:50%;background:var(--koe);color:var(--koe-deep);font-size:2.6rem;font-weight:700;line-height:1;box-shadow:0 0 0 6px #FBE0E8;margin-top:4px;margin-bottom:10px}
 .person h3{font-size:1.4rem;margin:10px 0 4px}
 .person .role{color:var(--coral);font-weight:800;font-size:.92rem;margin-bottom:12px}
-.person p{color:var(--muted);font-size:.98rem}
+.person p{color:var(--muted);font-size:.98rem;flex:1}
+.person .meta{font-size:.85rem;font-weight:700;color:var(--muted);margin-top:12px}
+.btn-cv{display:inline-flex;align-items:center;gap:6px;margin-top:18px;padding:11px 22px;border-radius:999px;background:var(--ink);color:#fff;font-weight:800;font-size:.9rem;transition:background .2s,transform .18s}
+.btn-cv:hover{background:var(--coral);transform:translateY(-2px)}
+.person.gaia .btn-cv:hover{background:var(--koe-deep)}
 
-/* PROJECTS */
-.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.proj{background:var(--card);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s;position:relative}
+/* AREAS */
+.legend{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:-30px auto 50px;font-size:.85rem;font-weight:700;color:var(--muted)}
+.area{margin-bottom:72px}
+.area:last-child{margin-bottom:0}
+.area-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:3px dashed #EBD7C0}
+.area-head .ae{font-size:2.3rem;line-height:1.1}
+.area-head h3{font-size:clamp(1.4rem,3.4vw,1.75rem);font-weight:700;line-height:1.2}
+.area-head p{color:var(--muted);font-weight:600;font-size:1rem;margin-top:4px}
+.area-sub{font-size:.8rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:30px 0 14px}
+
+/* PROJECT CARDS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.proj{background:var(--card);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s;position:relative}
 .proj:hover{transform:translateY(-6px) rotate(.5deg)}
-.proj .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.proj .pe{font-size:2.2rem}
-.proj .pill{font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:999px}
-.pill.live{background:#E7F3E7;color:#3F7A3F}
-.pill.soon{background:#FDEBD7;color:#B07A2A}
-.proj h3{font-size:1.3rem;margin-bottom:8px}
+.proj .top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+.proj .pe{font-size:2.1rem;line-height:1.1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;padding-top:4px}
+.pill{font-size:.7rem;font-weight:800;padding:4px 11px;border-radius:999px;white-space:nowrap}
+.pill.live,.pill.active{background:#E7F3E7;color:#3F7A3F}
+.pill.beta{background:#E3F1F6;color:#2F6F86}
+.pill.dev{background:#FDEBD7;color:#B07A2A}
+.pill.ongoing{background:#FCE8C2;color:#8F5E12}
+.pill.done{background:#ECE7F6;color:#5B4B8A}
+.pill.soon{background:#F0EBE4;color:#7A6655}
+.pill.cs{background:#FBE0E8;color:var(--koe-deep)}
+.who{font-size:.68rem;font-weight:800;padding:4px 10px;border-radius:999px;letter-spacing:.02em;white-space:nowrap;border:2px solid transparent}
+.who.e{background:#E3F1F6;color:#2F6F86;border-color:#CBE4EE}
+.who.g{background:#FBE0E8;color:var(--koe-deep);border-color:#F6C6D4}
+.who.eg{background:linear-gradient(90deg,#E3F1F6 0%,#FBE0E8 100%);color:var(--ink);border-color:#E8D3D8}
+.proj h3{font-size:1.18rem;line-height:1.25;margin-bottom:8px}
 .proj h3 a{color:var(--coral)}
 .proj h3 a:hover{text-decoration:underline}
-.proj p{color:var(--muted);font-size:.96rem;flex:1}
-.proj.ghost{background:transparent;border:3px dashed #E4CDB2;box-shadow:none;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-weight:700}
-.proj.ghost .pe{font-size:2.6rem;margin-bottom:8px}
+.proj p{color:var(--muted);font-size:.94rem;flex:1}
+
+/* SOCIAL: skills + case studies */
+.skills-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.skill{background:#fff;border:2px solid #F6C6D4;color:var(--koe-deep);border-radius:999px;padding:8px 16px;font-weight:800;font-size:.85rem}
+.method{color:var(--muted);font-size:.9rem;font-weight:700;margin-bottom:8px}
+.method b{color:var(--koe-deep)}
+.cs-card{border-top:5px solid var(--koe)}
+.nums{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;padding-top:14px;border-top:2px dashed #F3E6D8}
+.num b{display:block;font-family:'Fredoka',system-ui,sans-serif;font-size:1.45rem;color:var(--coral);line-height:1.1}
+.num span{font-size:.72rem;color:var(--muted);font-weight:700}
 
 /* VALUES */
 .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -125,7 +162,10 @@ section{padding:88px 0}
 .contact{background:var(--ink);border-radius:34px;padding:60px 40px;text-align:center;color:#FFF6EC;position:relative;overflow:hidden}
 .contact .bigspud{position:absolute;font-size:9rem;opacity:.12;right:-20px;bottom:-30px;transform:rotate(18deg)}
 .contact h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:12px}
-.contact p{color:#E8D8C6;max-width:460px;margin:0 auto 30px;font-weight:600}
+.contact p{color:#E8D8C6;max-width:520px;margin:0 auto 30px;font-weight:600}
+.contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-koe{background:var(--koe-deep);color:#fff;box-shadow:0 10px 26px rgba(212,19,103,.35)}
+.contact .hint{margin:22px auto 0;font-size:.85rem;color:#C9B7A3}
 
 /* FOOTER */
 footer{padding:34px 0;text-align:center;color:var(--muted);font-weight:600;font-size:.9rem}
@@ -136,7 +176,7 @@ footer a{color:var(--coral);font-weight:800}
 .reveal.in{opacity:1;transform:none}
 
 @media(max-width:860px){
-  .duo,.proj-grid,.vals{grid-template-columns:1fr}
+  .duo,.vals{grid-template-columns:1fr}
 }
 @media(max-width:680px){
   .nav-links{position:fixed;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);padding:24px;gap:18px;transform:translateY(-160%);transition:transform .35s;box-shadow:0 14px 24px rgba(61,44,30,.1)}
@@ -144,6 +184,8 @@ footer a{color:var(--coral);font-weight:800}
   .burger{display:flex}
   .lang-switch{margin-left:auto;margin-right:6px}
   section{padding:64px 0}
+  .area-head{gap:12px}
+  .proj-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -154,9 +196,9 @@ footer a{color:var(--coral);font-weight:800}
     <a href="#top" class="brand"><span class="spud">🥔</span> 2 Potatoes</a>
     <nav class="nav-links" id="navLinks">
       <a href="#chi-siamo">Chi siamo</a>
-      <a href="#progetti">Progetti</a>
+      <a href="#cosa-facciamo">Cosa facciamo</a>
       <a href="#come">Come lavoriamo</a>
-      <a href="#contatti" class="nav-cta">Scrivici</a>
+      <a href="#contatti" class="nav-cta">Contatti</a>
     </nav>
     <div class="lang-switch">
       <a href="/" class="active">IT</a>
@@ -172,10 +214,10 @@ footer a{color:var(--coral);font-weight:800}
   <div class="wrap hero-inner">
     <div class="spuds">🥔<span class="s2">🥔</span></div>
     <h1>Due patate.<br><span class="hl">Tante idee croccanti.</span></h1>
-    <p class="tag">Lo studio digitale di Elio &amp; Gaia</p>
-    <p class="lead">Costruiamo app, bot e automazioni con la cura delle cose fatte in casa: ingredienti semplici, tanta sostanza e zero fronzoli.</p>
+    <p class="tag">Elio &amp; Gaia: un duo tecnico + creativo</p>
+    <p class="lead"><b>Lui costruisce il prodotto</b> — app, siti, automazioni e piattaforme sicure. <b>Lei gli dà voce</b> — strategia, contenuti e community. Ingredienti semplici, tanta sostanza, zero fronzoli.</p>
     <div class="hero-actions">
-      <a href="#progetti" class="btn btn-coral">Guarda i progetti 🍟</a>
+      <a href="#cosa-facciamo" class="btn btn-coral">Cosa facciamo 🍟</a>
       <a href="#contatti" class="btn btn-plain">Parliamone ✉️</a>
     </div>
   </div>
@@ -186,70 +228,284 @@ footer a{color:var(--coral);font-weight:800}
     <div class="sec-head reveal">
       <span class="sec-emoji">👋</span>
       <h2>Chi siamo</h2>
-      <p>Due teste, un sacco (di patate). Ognuno col suo superpotere.</p>
+      <p>Due teste, un sacco (di patate). Lui costruisce, lei dà voce.</p>
     </div>
     <div class="duo">
       <div class="person reveal">
         <div class="face">🥔🛡️</div>
-        <h3>Elio</h3>
+        <h3>Elio Meriggi</h3>
         <div class="role">La patata tecnica</div>
-        <p>Cybersecurity, infrastrutture e sviluppo: trasforma le idee in prodotti che funzionano — e che nessuno può bucare.</p>
+        <p>ICT manager e consulente cybersecurity (CyberArk): costruisce app, siti, automazioni e piattaforme che funzionano — e che nessuno può bucare.</p>
+        <div class="meta">📍 Molfetta (BA)</div>
+        <a href="https://elio.2-potatoes.com" target="_blank" rel="noopener" class="btn-cv">Vedi il CV di Elio ↗</a>
       </div>
-      <div class="person reveal">
-        <div class="face">🥔✨</div>
-        <h3>Gaia</h3>
+      <div class="person gaia reveal">
+        <div class="avatar" aria-label="Koe">声</div>
+        <h3>Gaia Sciancalepore</h3>
         <div class="role">La patata brillante</div>
-        <p>L'altra metà del team: visione, gusto e concretezza. Se un'idea passa il suo esame, allora è davvero buona.</p>
+        <p>Digital marketer creativa: strategia editoriale, creazione di contenuti, community management e analytics. Il suo marchio è Koe 声, "voce": dà voce ai brand.</p>
+        <div class="meta">📍 Milano</div>
+        <a href="https://gaia.2-potatoes.com" target="_blank" rel="noopener" class="btn-cv">Vedi il CV di Gaia ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="progetti">
+<section id="cosa-facciamo">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-emoji">🌱</span>
-      <h2>I nostri progetti</h2>
-      <p>Piccoli prodotti coltivati con cura. La dispensa è in continuo rifornimento.</p>
+      <h2>Cosa facciamo</h2>
+      <p>Sei aree di competenza, tanti progetti coltivati con cura. Su ogni card, chi ci ha messo le mani.</p>
     </div>
-    <div class="proj-grid">
-      <div class="proj reveal">
-        <div class="top"><span class="pe">✈️</span><span class="pill live">Online</span></div>
-        <h3><a href="https://doratravels.app" target="_blank" rel="noopener">Dora Travels ↗</a></h3>
-        <p>Il compagno di viaggio digitale: mete, idee e itinerari organizzati in un'app curata e ispirazionale.</p>
-      </div>
-      <div class="proj reveal">
-        <div class="top"><span class="pe">🇮🇹</span><span class="pill live">Online</span></div>
-        <h3><a href="https://bonus-facile.info" target="_blank" rel="noopener">Bonus Facile ↗</a></h3>
-        <p>Bonus e agevolazioni italiane spiegati in modo semplice, con guide sempre aggiornate.</p>
-      </div>
-      <div class="proj reveal">
-        <div class="top"><span class="pe">🍺</span><span class="pill soon">In arrivo</span></div>
-        <h3>Stappa Birra</h3>
-        <p>L'app per chi ama la birra artigianale: catalogo, mappa dei birrifici e diario degli assaggi.</p>
-      </div>
-      <div class="proj reveal">
-        <div class="top"><span class="pe">🃏</span><span class="pill live">Attivo</span></div>
-        <h3>CR Impact Challenge</h3>
-        <p>Un gioco di carte collezionabili per il Rotaract europeo: ogni giornata mondiale diventa una missione di service, con punti, livelli di difficoltà e badge da conquistare agli eventi. La gamification messa al servizio del bene.</p>
-      </div>
-      <div class="proj reveal">
-        <div class="top"><span class="pe">🎻</span><span class="pill soon">In sviluppo</span></div>
-        <h3>Montelago Companion</h3>
-        <p>L'app da festival che funziona anche senza rete: mappa offline, programma dei concerti, chat di prossimità tra i partecipanti e figurine da collezionare sul campo. Nata per un festival celtico tra le montagne.</p>
-      </div>
-      <div class="proj reveal">
-        <div class="top"><span class="pe">🌆</span><span class="pill soon">In sviluppo</span></div>
-        <h3>Vesper</h3>
-        <p>La piattaforma gestionale per il Rotaract europeo: progetti di service, soci, formazione e calendari di migliaia di club in un unico sistema, aperto e costruito per durare.</p>
-      </div>
-      <div class="proj ghost reveal">
+    <div class="legend reveal">
+      <span>Chi fa cosa:</span>
+      <span class="who e">Elio</span>
+      <span class="who g">Gaia</span>
+      <span class="who eg">Elio + Gaia</span>
+    </div>
+
+    <!-- 1. App mobile -->
+    <div class="area">
+      <div class="area-head reveal">
+        <span class="ae">📱</span>
         <div>
-          <div class="pe">🧺</div>
-          Altre patate stanno crescendo…<br>torna a trovarci!
+          <h3>App mobile</h3>
+          <p>App che risolvono un bisogno vero, dal viaggio al festival.</p>
+        </div>
+      </div>
+      <div class="proj-grid">
+        <div class="proj reveal">
+          <div class="top"><span class="pe">✈️</span><span class="tags"><span class="pill live">Online</span><span class="who e">Elio</span></span></div>
+          <h3><a href="https://doratravels.app" target="_blank" rel="noopener">Dora Travels ↗</a></h3>
+          <p>Il compagno di viaggio: 250 paesi con clima, costi, sicurezza e visti, un copilota di viaggio, eventi, voli, hotel ed eSIM, e un globo 3D dei paesi visitati. Sito online, app in arrivo su iOS e Android.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🍺</span><span class="tags"><span class="pill soon">In arrivo</span><span class="who e">Elio</span></span></div>
+          <h3>Stappa Birra</h3>
+          <p>Catalogo di birre artigianali filtrabile, mappa dei birrifici e diario degli assaggi con scansione dell'etichetta.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">💞</span><span class="tags"><span class="pill beta">In beta</span><span class="who e">Elio</span></span></div>
+          <h3>Meet-ACT</h3>
+          <p>App di incontri e networking per la community internazionale Rotaract: scoperta per zona ed eventi, con la posizione sempre protetta.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🎻</span><span class="tags"><span class="pill dev">In sviluppo</span><span class="who e">Elio</span></span></div>
+          <h3>Montelago Companion</h3>
+          <p>L'app di un festival celtico tra le montagne che funziona senza rete: mappa offline, programma, chat di prossimità e figurine da collezionare.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🦷</span><span class="tags"><span class="pill done">Consegnato</span><span class="who eg">Elio + Gaia</span></span></div>
+          <h3>App ordini per un'azienda B2B del settore dentale</h3>
+          <p>Catalogo e presa ordini per la rete vendita, direttamente dal telefono. Elio ha costruito l'app; Gaia cura la comunicazione social del cliente (vedi l'area Social).</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🌸</span><span class="tags"><span class="pill ongoing">In corso</span><span class="who e">Elio</span></span></div>
+          <h3>App aziendale per un'azienda manifatturiera del settore fragranze</h3>
+          <p>App interna che sostituisce un bot Telegram: approvazione documenti e processi aziendali direttamente dal telefono.</p>
         </div>
       </div>
     </div>
+
+    <!-- 2. Siti web & landing -->
+    <div class="area">
+      <div class="area-head reveal">
+        <span class="ae">🌐</span>
+        <div>
+          <h3>Siti web &amp; landing</h3>
+          <p>Siti veloci, sicuri e chiari, che si gestiscono da soli.</p>
+        </div>
+      </div>
+      <div class="proj-grid">
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🇮🇹</span><span class="tags"><span class="pill live">Online</span><span class="who e">Elio</span></span></div>
+          <h3><a href="https://bonus-facile.info" target="_blank" rel="noopener">Bonus Facile ↗</a></h3>
+          <p>Aggregatore gratuito di bonus e agevolazioni italiane, con quiz di eleggibilità privacy-first. Aggiornato ogni giorno.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🌍</span><span class="tags"><span class="pill live">Online</span><span class="who e">Elio</span></span></div>
+          <h3><a href="https://doratravels.app" target="_blank" rel="noopener">doratravels.app ↗</a></h3>
+          <p>Il sito del prodotto Dora Travels: presenta l'app e accompagna il lancio su iOS e Android.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">☁️</span><span class="tags"><span class="pill done">Consegnato</span><span class="who e">Elio</span></span></div>
+          <h3>Landing "Voucher Cloud &amp; Cybersecurity"</h3>
+          <p>Per una società di consulenza IT: landing con calcolatore e FAQ per promuovere il voucher MIMIT alle PMI.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🥔</span><span class="tags"><span class="pill live">Online</span><span class="who eg">Elio + Gaia</span></span></div>
+          <h3>I siti di 2 Potatoes</h3>
+          <p>Questo sito, <a href="https://elio.2-potatoes.com" target="_blank" rel="noopener">elio.2-potatoes.com</a> e <a href="https://gaia.2-potatoes.com" target="_blank" rel="noopener">gaia.2-potatoes.com</a>: un ecosistema coerente, leggero e senza dipendenze esterne.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🗣️</span><span class="tags"><span class="pill soon">In arrivo</span><span class="who g">Gaia</span></span></div>
+          <h3>koe.pink</h3>
+          <p>Il sito personale di Gaia, la casa del marchio Koe 声.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Social media, contenuti & brand -->
+    <div class="area">
+      <div class="area-head reveal">
+        <span class="ae">📣</span>
+        <div>
+          <h3>Social media, contenuti &amp; brand</h3>
+          <p>Strategia, contenuti e community: dare voce ai brand.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skills-row">
+          <span class="skill">Strategia editoriale</span>
+          <span class="skill">Creazione di contenuti</span>
+          <span class="skill">Community management</span>
+          <span class="skill">Analisi e report</span>
+        </div>
+        <p class="method">Metodo in 4 fasi: <b>Analizziamolo!</b> → <b>Ho un piano.</b> → <b>È tempo di creatività!</b> → <b>E la lezione?</b></p>
+      </div>
+      <div class="area-sub reveal">Case study</div>
+      <div class="proj-grid">
+        <div class="proj cs-card reveal">
+          <div class="top"><span class="pe">👩‍🚀</span><span class="tags"><span class="pill cs">Case study</span><span class="who g">Gaia</span></span></div>
+          <h3>Agenzia di marketing internazionale (3 paesi)</h3>
+          <p>8 contenuti al mese in terzine Instagram / LinkedIn / TikTok, tono di voce dedicato per canale, trend TikTok con i team dei tre paesi.</p>
+          <div class="nums">
+            <div class="num"><b>+1.500</b><span>follower IG in un anno</span></div>
+            <div class="num"><b>+8.000</b><span>follower LinkedIn in un anno</span></div>
+            <div class="num"><b>~60.000</b><span>follower TikTok</span></div>
+          </div>
+        </div>
+        <div class="proj cs-card reveal">
+          <div class="top"><span class="pe">🦷</span><span class="tags"><span class="pill cs">Case study</span><span class="who g">Gaia</span></span></div>
+          <h3>Azienda B2B del settore dentale</h3>
+          <p>Dal solo contenuto statico ai video con professionisti del settore, broadcast Instagram e canale WhatsApp.</p>
+          <div class="nums">
+            <div class="num"><b>+100</b><span>follower IG organici in 3 mesi</span></div>
+            <div class="num"><b>+10%</b><span>audience LinkedIn</span></div>
+          </div>
+        </div>
+        <div class="proj cs-card reveal">
+          <div class="top"><span class="pe">🇪🇺</span><span class="tags"><span class="pill cs">Case study</span><span class="who g">Gaia</span></span></div>
+          <h3>Rotaract Europe (ERIC)</h3>
+          <p>Canale internazionale no-profit gestito in un team di 3: da statico a video per un pubblico 25-35, community management costante e broadcast channel.</p>
+          <div class="nums">
+            <div class="num"><b>+2.500</b><span>follower organici in 1 anno</span></div>
+            <div class="num"><b>+110</b><span>like organici in media</span></div>
+          </div>
+        </div>
+        <div class="proj cs-card reveal">
+          <div class="top"><span class="pe">🏙️</span><span class="tags"><span class="pill cs">Case study</span><span class="who g">Gaia</span></span></div>
+          <h3>Un club Rotaract locale</h3>
+          <p>Awareness e lead generation in una piccola città: colori istituzionali con un tono fresco, dai contenuti statici ai video.</p>
+          <div class="nums">
+            <div class="num"><b>+200</b><span>follower in 6 mesi</span></div>
+            <div class="num"><b>2,6%</b><span>engagement rate</span></div>
+            <div class="num"><b>4 + 4</b><span>nuovi soci + potenziali</span></div>
+          </div>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🎨</span><span class="tags"><span class="who eg">Elio + Gaia</span></span></div>
+          <h3>Identità e brand</h3>
+          <p>Nome, tono e immagine coordinata di 2 Potatoes, Koe 声 e HypeTeam.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Cybersecurity & IT -->
+    <div class="area">
+      <div class="area-head reveal">
+        <span class="ae">🔐</span>
+        <div>
+          <h3>Cybersecurity &amp; IT</h3>
+          <p>Infrastrutture e accessi privilegiati sotto controllo.</p>
+        </div>
+      </div>
+      <div class="proj-grid">
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🔑</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Consulenza Privileged Access Management</h3>
+          <p>Delivery, hardening e compliance CyberArk per grandi organizzazioni. Certificazioni CDE-PAM, PAM-DEF e PAM-SEN.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🗄️</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Infrastrutture &amp; networking</h3>
+          <p>Virtualizzazione, Active Directory e identità, VPN, segmentazione di rete e disaster recovery.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🛠️</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Servizi gestiti (MSP) per PMI</h3>
+          <p>HypeTeam: sicurezza, backup, rete e supporto per piccole imprese e professionisti, dal 2020.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Automazioni & bot -->
+    <div class="area">
+      <div class="area-head reveal">
+        <span class="ae">⚙️</span>
+        <div>
+          <h3>Automazioni &amp; bot</h3>
+          <p>Il lavoro ripetitivo lo fanno le macchine.</p>
+        </div>
+      </div>
+      <div class="proj-grid">
+        <div class="proj reveal">
+          <div class="top"><span class="pe">📈</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Trading Bot</h3>
+          <p>Assistente autonomo sui mercati crypto: opera con regole prestabilite e contenimento del rischio.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🥗</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Bot Telegram per piani alimentari</h3>
+          <p>Notifiche prima dei pasti, tracking di pasti e scorte. Gira come servizio 24/7.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🎟️</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Monitor biglietti festival</h3>
+          <p>Bot Telegram che avvisa nell'istante in cui si aprono le vendite.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">✅</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Bot di approvazione documenti</h3>
+          <p>Per un'azienda manifatturiera: approvazioni dal telefono, integrate col gestionale.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🏭</span><span class="tags"><span class="who e">Elio</span></span></div>
+          <h3>Integrazioni industriali</h3>
+          <p>Automazione di processi produttivi, OCR documentale, PLC e bilance industriali collegate al gestionale (Industry 4.0).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Piattaforme gestionali & community -->
+    <div class="area">
+      <div class="area-head reveal">
+        <span class="ae">🏢</span>
+        <div>
+          <h3>Piattaforme gestionali &amp; community</h3>
+          <p>Sistemi che tengono insieme migliaia di persone.</p>
+        </div>
+      </div>
+      <div class="proj-grid">
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🌆</span><span class="tags"><span class="pill dev">In sviluppo</span><span class="who e">Elio</span></span></div>
+          <h3>Vesper</h3>
+          <p>Piattaforma gestionale per Rotaract Europe: progetti di service, soci, formazione e calendari di migliaia di club in un unico sistema aperto. Pilota nel 2027.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🧩</span><span class="tags"><span class="pill ongoing">In corso</span><span class="who e">Elio</span></span></div>
+          <h3>Piattaforma aziendale a workflow</h3>
+          <p>Per un'azienda manifatturiera: processi guidati dai dati e un'app mobile che si aggiorna dal server, senza nuovi rilasci.</p>
+        </div>
+        <div class="proj reveal">
+          <div class="top"><span class="pe">🃏</span><span class="tags"><span class="pill active">Attivo</span><span class="who eg">Elio + Gaia</span></span></div>
+          <h3>CR Impact Challenge</h3>
+          <p>Gioco di carte collezionabili per il Rotaract europeo: ogni giornata mondiale è una missione di service con punti e difficoltà, gli eventi diventano badge. Carte illustrate (Gaia) e meccanica di gioco (Elio).</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -264,7 +520,7 @@ footer a{color:var(--coral);font-weight:800}
       <div class="val reveal">
         <div class="ve">🏡</div>
         <h3>Fatto in casa</h3>
-        <p>Progettiamo e costruiamo tutto noi, dall'idea al lancio. Niente scorciatoie, niente template riciclati.</p>
+        <p>Progettiamo e costruiamo tutto noi, dall'idea al lancio, dal codice ai contenuti. Niente scorciatoie, niente template riciclati.</p>
       </div>
       <div class="val reveal">
         <div class="ve">🔒</div>
@@ -286,14 +542,18 @@ footer a{color:var(--coral);font-weight:800}
       <span class="bigspud">🥔</span>
       <h2>Hai un'idea da far crescere?</h2>
       <p>Raccontacela: le migliori collaborazioni nascono da una chiacchierata.</p>
-      <a href="mailto:elio.meriggi@hypeteam.it" class="btn btn-coral">✉️ Scrivici</a>
+      <div class="contact-actions">
+        <a href="mailto:elio.meriggi@hypeteam.it" class="btn btn-coral">✉️ Scrivi a Elio</a>
+        <a href="mailto:gaia.k.sciancalepore@gmail.com" class="btn btn-koe">✉️ Scrivi a Gaia</a>
+      </div>
+      <p class="hint">App, siti, sicurezza e automazioni → Elio · Social, contenuti e brand → Gaia</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>© <span id="year"></span> 2 Potatoes 🥔🥔 · un progetto di <a href="https://hypeteam.it" target="_blank" rel="noopener">Elio Meriggi</a> &amp; Gaia</p>
+    <p>© <span id="year"></span> 2 Potatoes 🥔🥔 · <a href="https://elio.2-potatoes.com" target="_blank" rel="noopener">Elio Meriggi</a> &amp; <a href="https://gaia.2-potatoes.com" target="_blank" rel="noopener">Gaia Sciancalepore</a></p>
   </div>
 </footer>
 
