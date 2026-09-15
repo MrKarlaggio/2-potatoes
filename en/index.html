@@ -99,6 +99,8 @@ section{padding:88px 0}
 .person:hover{transform:translateY(-6px) rotate(-.5deg)}
 .person .face,.person .avatar{height:96px;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
 .person .face{font-size:3rem}
+.person .photo{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;box-shadow:0 0 0 5px #FBE0E8,0 10px 24px rgba(61,44,30,.18);margin-bottom:12px}
+.person:not(.gaia) .photo{box-shadow:0 0 0 5px #FBE3C8,0 10px 24px rgba(61,44,30,.18)}
 .person .avatar{width:88px;height:88px;border-radius:50%;background:var(--koe);color:var(--koe-deep);font-size:2.6rem;font-weight:700;line-height:1;box-shadow:0 0 0 6px #FBE0E8;margin-top:4px;margin-bottom:10px}
 .person h3{font-size:1.4rem;margin:10px 0 4px}
 .person .role{color:var(--coral);font-weight:800;font-size:.92rem;margin-bottom:12px}
@@ -233,7 +235,7 @@ footer a{color:var(--coral);font-weight:800}
     </div>
     <div class="duo">
       <div class="person reveal">
-        <div class="face">🥔🛡️</div>
+        <img class="photo" src="../assets/elio.jpg" alt="Elio Meriggi" width="96" height="96">
         <h3>Elio Meriggi</h3>
         <div class="role">The technical potato</div>
         <p>ICT manager and cybersecurity consultant (CyberArk): he builds apps, websites, automations and platforms that work — and that nobody can break into. He builds with AI: vibe coding plus IT management and cybersecurity experience, to ship in days what usually takes months.</p>
@@ -241,7 +243,7 @@ footer a{color:var(--coral);font-weight:800}
         <a href="https://elio.2-potatoes.com" target="_blank" rel="noopener" class="btn-cv">See Elio's CV ↗</a>
       </div>
       <div class="person gaia reveal">
-        <div class="avatar" aria-label="Koe">声</div>
+        <img class="photo" src="../assets/gaia.jpg" alt="Gaia Sciancalepore" width="96" height="96">
         <h3>Gaia Sciancalepore</h3>
         <div class="role">The brilliant potato</div>
         <p>Creative digital marketer: content strategy, content creation, community management and analytics. Her brand is Koe 声, "voice": she gives brands a voice.</p>
